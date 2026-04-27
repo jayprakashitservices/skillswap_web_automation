@@ -55,6 +55,29 @@ class SignupPage extends BasePage {
         await this.fill(locators.password, password);
     }
 
+    async checkEmailNotification(shouldCheck = true) {
+        const checkbox = this.getByTestId(locators.signupemailnotificationCheckbox);
+
+        await checkbox.waitFor({ state: 'visible' });
+
+        const isChecked = await checkbox.isChecked();
+
+        if (shouldCheck !== isChecked) {
+            await checkbox.click();
+        }
+    }
+
+    async checkTermsAndConditions(shouldCheck = true) {
+        const checkbox = this.getByTestId(locators.signuptermsCheckbox);
+
+        await checkbox.waitFor({ state: 'visible' });
+
+        const isChecked = await checkbox.isChecked();
+
+        if (shouldCheck !== isChecked) {
+            await checkbox.click();
+        }
+    }
 }
 
 module.exports = { SignupPage };

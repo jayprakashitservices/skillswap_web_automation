@@ -35,7 +35,7 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
     baseURL: process.env.BASE_URL || 'http://192.168.1.18:3001/',
     storageState: 'auth/user.json',
-    headless: true,
+    headless: false,
 
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

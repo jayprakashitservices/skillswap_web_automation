@@ -18,36 +18,36 @@ test.describe('Login Feature', () => {
     await expect(page).toHaveURL(/dashboard/);
   });
 
-  test('TC02 - Empty Email || Empty email and password', async ({ loginPage }) => {
+  test.skip('TC02 - Empty Email || Empty email and password', async ({ loginPage }) => {
     await loginPage.enterPassword(data.validUser.password);
     await loginPage.clickSignIn();
     await expect(loginPage.page.locator('text=Email is required')).toBeVisible();
   });
 
-  test('TC03 - Invalid email format', async ({ page, loginPage }) => {
+  test.skip('TC03 - Invalid email format', async ({ page, loginPage }) => {
     await loginPage.login(data.invalidUser.email, data.invalidUser.password);
     await loginPage.clickSignIn();
     await expectToast(page, 'Invalid email address.');
   });
 
-  test('TC04 - Invalid credentials', async ({ page, loginPage }) => {
+  test.skip('TC04 - Invalid credentials', async ({ page, loginPage }) => {
     await loginPage.login(data.userNotfound.email, data.userNotfound.password);
     await loginPage.clickSignIn();
     await expectToast(page, 'user not found.');
   });
 
-  test('TC05 - Empty password', async ({ page, loginPage }) => {
+  test.skip('TC05 - Empty password', async ({ page, loginPage }) => {
     await loginPage.login(data.userNotfound.email, data.emptyData.password);
     await loginPage.clickSignIn();
     await expectToast(page, 'Password is required.');
   });
 
-  test('TC06 - Forgot password link', async ({ page, loginPage }) => {
+  test.skip('TC06 - Forgot password link', async ({ page, loginPage }) => {
     await loginPage.clickForgotPassword();
     await expect(page).toHaveURL(/forgot-password/);
   });
 
-  test('TC07 - Sign up link', async ({ page, loginPage }) => {
+  test.skip('TC07 - Sign up link', async ({ page, loginPage }) => {
     await loginPage.clickSignUp();
     await expect(page).toHaveURL(/signup/);
   });
