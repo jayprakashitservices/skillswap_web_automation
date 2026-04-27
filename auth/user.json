@@ -1,0 +1,49 @@
+{
+  "cookies": [
+    {
+      "name": "next-auth.csrf-token",
+      "value": "40f794b09f2ae7699cbfc2c90716aa854de31cd09fbc95c888fd9e591cf76105%7Ca4f0a361fb7781adf4d9308ce8a84d34f88fcca92b5f539d0acf2bae901d4417",
+      "domain": "192.168.1.129",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "next-auth.callback-url",
+      "value": "http%3A%2F%2F192.168.1.129%3A3001",
+      "domain": "192.168.1.129",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "user",
+      "value": "%7B%22user_id%22%3A%2269df8f8c9ec9ca68b43b64c4%22%2C%22secret_key%22%3A%22ff5f8be979f23cbcfba75732eccaa0d1%22%2C%22role%22%3A%5B%22client%22%5D%2C%22challange%22%3A%7B%22next_challenge%22%3A%22%22%2C%22last_challange%22%3A%22%22%7D%2C%22first_name%22%3A%22John%22%2C%22last_name%22%3A%22Wick%22%2C%22isActiveTwoFactorAuthentication%22%3Afalse%2C%22primary_role%22%3A%22client%22%7D",
+      "domain": "192.168.1.129",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://192.168.1.129:3001",
+      "localStorage": [
+        {
+          "name": "nextauth.message",
+          "value": "{\"event\":\"session\",\"data\":{\"trigger\":\"getSession\"},\"timestamp\":1777270659}"
+        },
+        {
+          "name": "user",
+          "value": "{\"user_id\":\"69df8f8c9ec9ca68b43b64c4\",\"secret_key\":\"ff5f8be979f23cbcfba75732eccaa0d1\",\"role\":[\"client\"],\"challange\":{\"next_challenge\":\"\",\"last_challange\":\"\"},\"first_name\":\"John\",\"last_name\":\"Wick\",\"isActiveTwoFactorAuthentication\":false,\"primary_role\":\"client\"}"
+        }
+      ]
+    }
+  ]
+}
