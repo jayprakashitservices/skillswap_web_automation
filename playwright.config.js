@@ -33,7 +33,7 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL || 'http://192.168.1.18:3001/',
     storageState: 'auth/user.json',
     headless: true,
 

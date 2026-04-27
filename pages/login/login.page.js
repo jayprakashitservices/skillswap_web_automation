@@ -7,7 +7,7 @@ class LoginPage extends BasePage {
   }
 
   async goto() {
-    const baseURL = process.env.BASE_URL || '';
+    const baseURL = process.env.BASE_URL || 'http://192.168.1.18:3001/';
     await this.page.goto(`${baseURL}/login`);
   }
 
