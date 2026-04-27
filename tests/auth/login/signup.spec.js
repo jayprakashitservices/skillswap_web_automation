@@ -11,8 +11,6 @@ const { allure } = require('allure-playwright');
 
 test.describe('Signup Feature', () => {
 
-    
-
     test('TC01 - Valid Signup for Hire Talent @smoke', async ({ page, signupPage }) => {
         await allure.description('Verify valid signup');
         await signupPage.goto();
@@ -22,7 +20,29 @@ test.describe('Signup Feature', () => {
 
         await expect(page).toHaveURL(/client/);
         await expect(page.getByText('Find work that suits you — join today.')).toBeVisible();
-        
+
+        const user = getSignupUser();
+        await signupPage.fillSignupForm(user);
+
+        await signupPage.checkEmailNotification(true);
+        await signupPage.checkTermsAndConditions(true);
+
+        await signupPage.clickSignUp();
+        await expect(page.getByText('Registration successful.')).toBeVisible();
+        await expect(page).toHaveURL(/dashboard/);
+
+    });
+
+    test('TC02 - Valid Signup for Hire Freelancer @smoke', async ({ page, signupPage }) => {
+        await allure.description('Verify valid signup');
+        await signupPage.goto();
+        // Add signup logic here
+        await signupPage.clickCreateFreelancerAccount();
+        await signupPage.clickCreateAccount();
+
+        await expect(page).toHaveURL(/freelancer/);
+        await expect(page.getByText('Find work that suits you — join today.')).toBeVisible();
+
         const user = getSignupUser();
         await signupPage.fillSignupForm(user);
 
