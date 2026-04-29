@@ -12,8 +12,9 @@ module.exports = {
     email: "wrong@test.com",
     password: "wrong123"
   },
-  emptyData:{
+  emptyData: {
     email: "",
     password: ""
-}
+  },
+  countries: ['United States', 'Canada', 'India', 'Germany']
 };

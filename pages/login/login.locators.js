@@ -2,7 +2,7 @@
 module.exports = {
   emailInput: 'email-input',
   passwordInput: 'password-input',
-  signInBtn: 'signin-button',
+  signInButton: 'signin-button',
   emailError: 'email-error',
   forgotPasswordLink: 'forgot-password-link',
   signupLink: 'signup-link'

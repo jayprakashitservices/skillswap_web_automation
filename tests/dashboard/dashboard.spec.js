@@ -1,14 +1,20 @@
 const { test, expect } = require('../../fixtures/baseTest');
-const loginPage = require('../../pages/login/login.page');
-const data = require('../../utils/testData');
-const { expectToast } = require('../../utils/toastHelper');
 const { allure } = require('allure-playwright');
 
 test.describe('Skillswip Dashboard', () => {
 
-    test('TC01_Dashboard Test', async ({ page }) => {
+    test('TC01 - Dashboard after login @smoke', async ({ loggedInPage }) => {
+        await allure.description('Verify user lands on dashboard after login');
+
+        await expect(loggedInPage).toHaveURL(/dashboard/);
+        await expect(loggedInPage.getByText('Dashboard')).toBeVisible();
+    });
+
+    test('TC02 - Direct navigation (unauthenticated)', async ({ page }) => {
         await page.goto('/client/dashboard');
-        await expect(page).toHaveURL(/dashboard/);
+
+        // Expect redirect to login
+        await expect(page).toHaveURL(/login/);
     });
 
 });
