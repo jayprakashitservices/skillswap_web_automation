@@ -2,9 +2,17 @@
 const base = require('@playwright/test');
 const { LoginPage } = require('../pages/login/login.page');
 const { SignupPage } = require('../pages/signup/signup.page');
+const { ForgotPasswordPage } = require('../pages/login/forgotPassword.page');
+const { HomePage } = require('../pages/home/skillswipHome.page');
 const data = require('../utils/testData');
 
 exports.test = base.test.extend({
+
+  homePage: async ({ page }, use) => {
+    const homePage = new HomePage(page);
+    await use(homePage);
+  },
+
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await use(loginPage);
@@ -12,6 +20,10 @@ exports.test = base.test.extend({
 
   signupPage: async ({ page }, use) => {
     await use(new SignupPage(page));
+  },
+
+  forgotPasswordPage: async ({ page }, use) => {
+    await use(new ForgotPasswordPage(page));
   },
 
   // ✅ NEW: Auto Login Fixture

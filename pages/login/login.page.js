@@ -8,7 +8,13 @@ class LoginPage extends BasePage {
 
   async goto() {
     const baseURL = process.env.BASE_URL || 'http://192.168.1.18:3001/';
-    await this.page.goto(`${baseURL}/login`);
+    await this.page.goto(`${baseURL}`);
+  }
+
+  async clickLogin() {
+    await this.page.getByRole('link', { name: 'Log In' }).click();
+    await this.page.waitForURL(/login/);
+    //await this.click(locators.loginLink);
   }
 
   async enterEmail(email) {

@@ -1,5 +1,6 @@
 // pages/login/login.locators.js
 module.exports = {
+  loginLink: 'login-link',
   emailInput: 'email-input',
   passwordInput: 'password-input',
   signInButton: 'signin-button',

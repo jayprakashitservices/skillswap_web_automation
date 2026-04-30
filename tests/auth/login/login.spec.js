@@ -12,6 +12,7 @@ test.describe('Login Feature', () => {
 
   test('TC01 - Valid Login @smoke', async ({ page, loginPage }) => {
     await allure.description('Verify valid login');
+    await loginPage.clickLogin();
     await loginPage.login(data.validUser.email, data.validUser.password);
     await expect(page.getByText('Login Successfully.')).toBeVisible();
     await expect(page).toHaveURL(/dashboard/);
