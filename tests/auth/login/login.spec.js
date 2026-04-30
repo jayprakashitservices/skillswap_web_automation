@@ -51,4 +51,9 @@ test.describe('Login Feature', () => {
     await expect(page).toHaveURL(/signup/);
   });
 
+  test.skip('TC08 - ', async ({ page, loginPage }) => {
+    await loginPage.clickSignUp();
+    await expect(page).toHaveURL(/signup/);
+  });
+
 });
